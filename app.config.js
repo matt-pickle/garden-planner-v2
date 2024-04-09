@@ -1,4 +1,4 @@
-{
+export default {
   "expo": {
     "name": "garden-planner-v2",
     "slug": "garden-planner-v2",
@@ -22,7 +22,8 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.mattpickle.gardenplanner"
+      "package": "com.mattpickle.gardenplanner",
+      "googleServicesFile": process.env.GOOGLE_SERVICES_JSON
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -31,6 +32,9 @@
       "eas": {
         "projectId": "493a4b40-6c20-4f1f-95a9-41eb2a23ab87"
       }
-    }
+    },
+    "plugins": [
+      "@react-native-google-signin/google-signin"
+    ]
   }
 }

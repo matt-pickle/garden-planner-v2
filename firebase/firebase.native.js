@@ -1,11 +1,14 @@
 import { initializeApp } from "firebase/app"
 import firebaseConfig from "./firebase-keys"
 import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore"
-import { getAuth } from "firebase/auth"
+import { initializeAuth, getReactNativePersistence } from 'firebase/auth';
+import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
 
 export const firebaseApp = initializeApp(firebaseConfig)
+export const auth = initializeAuth(firebaseApp, {
+  persistence: getReactNativePersistence(ReactNativeAsyncStorage)
+})
 export const db = getFirestore(firebaseApp)
-export const auth = getAuth(firebaseApp)
 
 export async function createDocument(userId) {
   await setDoc(doc(db, "users", userId), {

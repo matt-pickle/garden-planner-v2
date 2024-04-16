@@ -3,6 +3,7 @@ import { StatusBar } from 'expo-status-bar'
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 import { onAuthStateChanged } from "firebase/auth"
 import { auth, getUserData } from "./firebase/firebase"
+import Loading from "./components/Loading"
 import Login from "./components/Login"
 import Main from "./components/Main"
 import styles from "./styles/AppStyles.js"
@@ -10,10 +11,11 @@ import styles from "./styles/AppStyles.js"
 export default function App() {
   const [user, setUser] = useState(auth.currentUser)
   const [userData, setUserData] = useState()
-  const [screen, setScreen] = useState("Login")
+  const [screen, setScreen] = useState("Loading")
   
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (userObj) => {
+      setScreen("Loading")
       if (userObj) {
         setUser(userObj)
         setUserData(await getUserData(userObj.uid))
@@ -29,6 +31,9 @@ export default function App() {
 
   let displayedScreen = null
   switch (screen) {
+    case "Loading":
+      displayedScreen = <Loading />
+      break;
     case "Login":
       displayedScreen = <Login />
       break;

@@ -20,7 +20,7 @@ export default {
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#004B14"
       },
       "package": "com.mattpickle.gardenplanner",
       "googleServicesFile": process.env.GOOGLE_SERVICES_JSON

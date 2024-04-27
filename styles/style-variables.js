@@ -14,5 +14,5 @@ export const darkGreen = "#004b14"
 export const cream = "#ffffe1"
 export const darkCream = "#c8c896"
 
-export const boldFont = "Solway_700Bold";
-export const lightFont ="Solway_400Regular";
+export const boldFont = "Solway_700Bold"
+export const lightFont = "Solway_400Regular"

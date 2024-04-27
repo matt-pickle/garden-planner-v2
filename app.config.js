@@ -3,7 +3,7 @@ export default {
     "name": "garden-planner-v2",
     "slug": "garden-planner-v2",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "default",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {

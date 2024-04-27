@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { Dimensions } from "react-native"
 import { StatusBar } from 'expo-status-bar'
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 import { onAuthStateChanged } from "firebase/auth"
@@ -12,9 +13,10 @@ export default function App() {
   const [user, setUser] = useState(auth.currentUser)
   const [userData, setUserData] = useState()
   const [screen, setScreen] = useState("Loading")
+  const [orientation, setOrientation] = useState("")
   
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (userObj) => {
+    const authListener = onAuthStateChanged(auth, async (userObj) => {
       setScreen("Loading")
       if (userObj) {
         setUser(userObj)
@@ -26,8 +28,20 @@ export default function App() {
         console.log("logged out")
       }
     })
-    return unsubscribe
+    return authListener
   },[])
+
+  useEffect(() => {
+    const dimensionsListener = Dimensions.addEventListener("change", () => {
+      const dim = Dimensions.get("screen")
+      if (dim.width >= dim.height) {
+        setOrientation("landscape")
+      } else {
+        setOrientation("portrait")
+      }
+    })
+    return () => dimensionsListener.remove()
+  }, [])
 
   let displayedScreen = null
   switch (screen) {

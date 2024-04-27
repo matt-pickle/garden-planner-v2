@@ -6,7 +6,7 @@ import { onAuthStateChanged } from "firebase/auth"
 import { auth, getUserData } from "./firebase/firebase"
 import Loading from "./components/Loading"
 import Login from "./components/Login"
-import Main from "./components/Main"
+import Dashboard from "./components/Dashboard"
 import styles from "./styles/AppStyles.js"
 
 export default function App() {
@@ -21,7 +21,7 @@ export default function App() {
       if (userObj) {
         setUser(userObj)
         setUserData(await getUserData(userObj.uid))
-        setScreen("Main")
+        setScreen("Dashboard")
         console.log("logged in as " + userObj.uid)
       } else {
         setScreen("Login")
@@ -51,8 +51,8 @@ export default function App() {
     case "Login":
       displayedScreen = <Login />
       break;
-    case "Main":
-      displayedScreen = <Main user={user} userData={userData} />
+    case "Dashboard":
+      displayedScreen = <Dashboard user={user} userData={userData} setScreen={setScreen} />
       break;
   }
 

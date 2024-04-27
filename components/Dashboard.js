@@ -154,7 +154,7 @@ export default function Dashboard({ user, userData, setScreen }) {
       <SettingsModal
         isSettingsVisible={isSettingsVisible}
         setIsSettingsVisible={setIsSettingsVisible}
-        name={userData.name}
+        name={user.displayName}
         zone={zone}
         changeZone={changeZone}
         setScreen={setScreen}

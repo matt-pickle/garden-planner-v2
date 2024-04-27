@@ -44,7 +44,7 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <StatusBar style="auto"/>
+      <StatusBar style="light"/>
       <SafeAreaView style={styles.container}>
         {displayedScreen}
       </SafeAreaView>

@@ -3,7 +3,7 @@ import styles from "../styles/LoadingStyles.js"
 
 export default function Loading() {
   return (
-    <View>
+    <View style={styles.loadingScreen}>
       <ActivityIndicator 
         style={styles.activityIndicator}
         size="large"

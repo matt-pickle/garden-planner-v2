@@ -7,14 +7,14 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     backgroundColor: cream,
     borderRadius: 5,
-    marginTop: 15,
+    marginTop: 20,
     marginHorizontal: 10,
     elevation: 5
   },
 
   listItemTitleButton: {
     flexGrow: 1,
-    padding: 10,
+    padding: 15,
   },
 
   listItemText: {
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
 
   listItemDeleteButton: {
     justifyContent: "center",
-    padding: 5
+    padding: 10
   },
 
   listItemIcon: {

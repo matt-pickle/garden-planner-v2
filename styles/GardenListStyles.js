@@ -1,11 +1,10 @@
 import { StyleSheet } from "react-native"
-import { lightFont, cream, darkGreen } from "./style-variables.js"
+import { screenHeight, lightFont, cream, darkGreen } from "./style-variables.js"
 
 const styles = StyleSheet.create({
   listContainer: {
-    maxHeight: "100%",
-    paddingHorizontal: 5,
-    paddingBottom: 45
+    maxHeight: screenHeight - 70,
+    paddingHorizontal: 5
   },
 
   list: {

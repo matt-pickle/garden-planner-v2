@@ -9,9 +9,8 @@ export const db = getFirestore(firebaseApp)
 
 export async function createDocument(userId) {
   await setDoc(doc(db, "users", userId), {
-    meals: [],
-    schedule: [],
-    groceryList: []
+    zone: "7a",
+    gardens: []
   })
   .catch(error => console.log(error))
 }

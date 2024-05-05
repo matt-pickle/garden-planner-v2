@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native"
-import { lightFont, boldFont, darkGreen, cream, darkCream } from "./style-variables.js"
+import { screenWidth, lightFont, boldFont, darkGreen, cream, darkCream } from "./style-variables.js"
 
 const styles = StyleSheet.create({
   modal: {
@@ -10,9 +10,8 @@ const styles = StyleSheet.create({
     borderColor: darkCream,
     borderWidth: 3,
     borderRadius: 5,
-    width: 300,
-    padding: 15,
-    paddingTop: 10,
+    width: screenWidth - 50,
+    padding: 25,
     marginTop: 25,
     elevation: 5
   },
@@ -31,8 +30,8 @@ const styles = StyleSheet.create({
   modalHeader: {
     color: darkGreen,
     fontFamily: boldFont,
-    fontSize: 18,
-    marginBottom: 15
+    fontSize: 20,
+    marginBottom: 25
   },
 
   modalX: {
@@ -42,15 +41,15 @@ const styles = StyleSheet.create({
   },
 
   modalXButton: {
-    marginTop: -15,
-    marginRight: -5
+    marginTop: -45,
+    marginRight: -10
   },
 
   modalText: {
     color: darkGreen,
     fontFamily: lightFont,
     fontSize: 16,
-    marginBottom: 20
+    marginBottom: 25
   },
 
   modalPickerContainer: {
@@ -85,8 +84,8 @@ const styles = StyleSheet.create({
     fontFamily: boldFont,
     fontSize: 16,
     borderRadius: 5,
-    paddingVertical: 5,
-    paddingHorizontal: 15,
+    paddingVertical: 10,
+    paddingHorizontal: 25,
     marginTop: 15
   },
 

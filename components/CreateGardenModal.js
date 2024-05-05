@@ -3,16 +3,16 @@ import { Modal, Text, View, Pressable, TextInput } from "react-native"
 import styles from "../styles/CreateGardenModalStyles"
 
 export default function CreateGardenModal({ createNewGarden, isCreateGardenModalVisible, setIsCreateGardenModalVisible }) {
-  const [gardenName, setGardenName] = useState("");
+  const [gardenName, setGardenName] = useState("")
 
   function handleOK() {
-    createNewGarden(gardenName);
+    createNewGarden(gardenName)
     setGardenName("");
   }
 
   function handleCancel() {
-    setIsCreateGardenModalVisible(false);
-    setGardenName("");
+    setIsCreateGardenModalVisible(false)
+    setGardenName("")
   }
 
   return (
@@ -36,7 +36,7 @@ export default function CreateGardenModal({ createNewGarden, isCreateGardenModal
           <Pressable
             onPress={handleOK}
           >
-            <Text style={styles.modalButton}>OK</Text>
+            <Text style={[styles.modalButton, styles.okButton]}>OK</Text>
           </Pressable>
           <Pressable
             onPress={handleCancel}

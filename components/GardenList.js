@@ -1,8 +1,10 @@
 import { View, ScrollView, Text, Pressable } from "react-native"
 import GardenListItem from "./GardenListItem"
-import styles from "../styles/GardenListStyles"
+import createStyleSheet from "../styles/GardenListStyles.js"
 
 export default function GardenList({ gardens, openEditor, openDeleteModal, setIsCreateGardenModalVisible }) {
+  const styles = createStyleSheet()
+  
   const gardenListItems = gardens.map(item => {
     return (
       <GardenListItem

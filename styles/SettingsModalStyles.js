@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native"
-import { screenWidth, lightFont, boldFont, darkGreen, cream, darkCream } from "./style-variables.js"
+import { lightFont, boldFont, darkGreen, cream, darkCream } from "./style-variables.js"
 
 const styles = StyleSheet.create({
   modal: {
@@ -10,7 +10,8 @@ const styles = StyleSheet.create({
     borderColor: darkCream,
     borderWidth: 3,
     borderRadius: 5,
-    width: screenWidth - 50,
+    width: "90%",
+    maxWidth: 400,
     padding: 25,
     marginTop: 25,
     elevation: 5

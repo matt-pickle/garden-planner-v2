@@ -70,21 +70,6 @@ const styles = StyleSheet.create({
     marginRight: -5
   },
 
-  modalInput: {
-    textAlign: "center",
-    width: 230,
-    color: darkGreen,
-    fontFamily: lightFont,
-    fontSize: 16,
-    borderColor: darkCream,
-    borderWidth: 2,
-    borderRadius: 5,
-    paddingVertical: 5,
-    paddingHorizontal: 5,
-    marginTop: 0,
-    marginBottom: 15
-  },
-
   darkZoneLink: {
     color: darkGreen,
     fontFamily: lightFont,

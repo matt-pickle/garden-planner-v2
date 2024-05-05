@@ -111,8 +111,7 @@ export default function createStyleSheet(width, height) {
       borderWidth: 2,
       borderColor: darkCream,
       borderRadius: 5,
-      width: 140,
-      paddingVertical: 5,
+      width: 155,
       paddingLeft: 10,
       paddingRight: 0,
       margin: 5,
@@ -127,8 +126,8 @@ export default function createStyleSheet(width, height) {
 
     picker: {
       color: darkGreen,
-      marginLeft: -10,
-      width: 97,
+      marginLeft: -15,
+      width: 115,
       transform: [
         { scaleX: 0.9 }, 
         { scaleY: 0.9 },

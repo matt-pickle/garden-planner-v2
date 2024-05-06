@@ -56,7 +56,7 @@ export default function App() {
       displayedScreen = <Login />
       break;
     case "Dashboard":
-      displayedScreen = <Dashboard user={user} userData={userData} setScreen={setScreen} />
+      displayedScreen = <Dashboard user={user} userData={userData} setScreen={setScreen} orientation={orientation} />
       break;
   }
 

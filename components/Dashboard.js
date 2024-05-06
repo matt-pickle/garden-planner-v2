@@ -16,7 +16,7 @@ import styles from "../styles/DashboardStyles"
 // const interstitial = InterstitialAd.createForAdRequest(TestIds.INTERSTITIAL)
 // const interstitial = InterstitialAd.createForAdRequest(admobKeys.interstitialID)
 
-export default function Dashboard({ user, userData, setScreen }) {
+export default function Dashboard({ user, userData, setScreen, orientation }) {
   const [zone, setZone] = useState(userData.zone)
   const [gardens, setGardens] = useState(userData.gardens)
   const [isSettingsVisible, setIsSettingsVisible] = useState(false)
@@ -141,6 +141,7 @@ export default function Dashboard({ user, userData, setScreen }) {
     zone={zone}
     saveAndClose={saveAndClose}
     openDeleteModal={openDeleteModal}
+    orientation={orientation}
   />
 
   const schedule = <Schedule

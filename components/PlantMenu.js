@@ -1,16 +1,10 @@
 import { useMemo } from "react"
-import { View, ScrollView, Text, Image, Pressable, Dimensions } from "react-native"
+import { View, ScrollView, Text, Image, Pressable } from "react-native"
 import { useSelectedPlant } from "../context/SelectedPlantContext"
 import plantData from "../database/plantData.js"
 import iconPicker from "../functions/iconPicker"
 
-export default function PlantMenu({ zone, styles }) {
-  let isMenuHorizontal = true
-  const dim = Dimensions.get("screen")
-  if (dim.width > dim.height) {
-    isMenuHorizontal = false
-  }
-
+export default function PlantMenu({ zone, styles, orientation }) {
   const { selectedPlant, setSelectedPlant } = useSelectedPlant()
 
   const plantableArr = useMemo(() => {
@@ -24,7 +18,7 @@ export default function PlantMenu({ zone, styles }) {
   const menu = useMemo(() => {
     return (
       plantableArr.map((item, index) => {
-        const icon = iconPicker(item.name);
+        const icon = iconPicker(item.name)
         return (
           <Pressable
             style={[styles.menuButton, (selectedPlant === item.name && styles.selectedPlantIcon)]}
@@ -34,15 +28,15 @@ export default function PlantMenu({ zone, styles }) {
             <Image source={icon} style={{width: "100%", height: "100%"}}/>
             <Text style={styles.menuButtonText}>{item.name}</Text>
           </Pressable>
-        );
+        )
       })
     )
-  }, [plantableArr, selectedPlant])
+  }, [plantableArr, selectedPlant, orientation])
   
   return (
     <View style={styles.menuContainer}>
       <ScrollView
-        horizontal={isMenuHorizontal}
+        horizontal={orientation === "landscape" ? false : true}
         contentContainerStyle={styles.contentContainer}
         persistentScrollbar={true}
       >

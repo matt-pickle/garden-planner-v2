@@ -8,7 +8,7 @@ import Square from "./Square"
 import PlantMenu from "./PlantMenu"
 import createStyleSheet from "../styles/GardenEditorStyles"
 
-export default function GardenEditor({ displayedGarden, garden, saveAndClose, openDeleteModal, zone }) {
+export default function GardenEditor({ displayedGarden, garden, saveAndClose, openDeleteModal, zone, orientation }) {
   const [plantedArr, setPlantedArr] = useState(displayedGarden.plantedArr)
   const [width, setWidth] = useState(displayedGarden.width)
   const [height, setHeight] = useState(displayedGarden.height)
@@ -83,7 +83,7 @@ export default function GardenEditor({ displayedGarden, garden, saveAndClose, op
         );
       })
     )
-  }, [plantedArr])
+  }, [plantedArr, orientation])
   
   return (
     <SelectedPlantProvider>
@@ -145,6 +145,7 @@ export default function GardenEditor({ displayedGarden, garden, saveAndClose, op
           <PlantMenu
             styles={styles}
             zone={zone}
+            orientation={orientation}
           />
         </View>
       </View>

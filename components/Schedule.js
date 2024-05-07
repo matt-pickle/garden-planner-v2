@@ -54,16 +54,18 @@ export default function Schedule({ gardens, zone }) {
   const scheduleArr = messagesArr.map((item, index) => {
     return (
       <View style={styles.schedTextContainer} key={index}>
-        <View style={styles.schedLeftColumn}>
-          <Text style={styles.schedDate}>{item.date}</Text>
-          <View style={styles.schedIconContainer}>
-            <Image source={item.icon}
-              style={{ width: "100%", height: "100%" }}
-              resizeMode="contain"
-            />
+
+          <View style={styles.schedLeftColumn}>
+            <Text style={styles.schedDate}>{item.date}</Text>
+            <View style={styles.schedIconContainer}>
+              <Image source={item.icon}
+                style={{ width: "100%", height: "100%" }}
+                resizeMode="contain"
+              />
+            </View>
           </View>
-        </View>
-        <Text style={styles.schedText}>{item.message}</Text>
+          <Text style={styles.schedText}>{item.message}</Text>
+     
       </View>
     )   
   })

@@ -15,36 +15,38 @@ export default function DashTopBar({ isScheduleOpen, setIsScheduleOpen, setIsSet
 
   return (
     <View style={styles.dashTopBar}>
-      <View style={styles.dashTabContainer}>
-        <Pressable
-          style={[styles.dashTabBtn, (!isScheduleOpen && styles.selectedTab)]}
-          onPress={closeSchedule}
-        >
-          <Text
-            style={[styles.tabText, (!isScheduleOpen && styles.selectedTab)]}
+      <View style={styles.dashTopBarInner}>
+        <View style={styles.dashTabContainer}>
+          <Pressable
+            style={[styles.dashTabBtn, (!isScheduleOpen && styles.selectedTab)]}
+            onPress={closeSchedule}
           >
-            GARDENS
-          </Text>
-        </Pressable>
-        <Pressable
-          style={[styles.dashTabBtn, (isScheduleOpen && styles.selectedTab)]}
-          onPress={openSchedule}
-        >
-          <Text
-            style={[styles.tabText, (isScheduleOpen && styles.selectedTab)]}
+            <Text
+              style={[styles.tabText, (!isScheduleOpen && styles.selectedTab)]}
+            >
+              GARDENS
+            </Text>
+          </Pressable>
+          <Pressable
+            style={[styles.dashTabBtn, (isScheduleOpen && styles.selectedTab)]}
+            onPress={openSchedule}
           >
-            SCHEDULE
-          </Text>
+            <Text
+              style={[styles.tabText, (isScheduleOpen && styles.selectedTab)]}
+            >
+              SCHEDULE
+            </Text>
+          </Pressable>
+        </View>
+        <Pressable
+          onPress={() => setIsSettingsVisible(true)}
+        >
+          <Entypo
+            name="dots-three-vertical"
+            style={styles.dashIcon}
+          />
         </Pressable>
       </View>
-      <Pressable
-        onPress={() => setIsSettingsVisible(true)}
-      >
-        <Entypo
-          name="dots-three-vertical"
-          style={styles.dashIcon}
-        />
-      </Pressable>
     </View>
   );
 }

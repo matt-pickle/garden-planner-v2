@@ -4,12 +4,20 @@ import { lightFont, cream, darkGreen } from "./style-variables.js"
 const styles = StyleSheet.create({
   dashTopBar: {
     flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: darkGreen,
     height: 45,
     paddingHorizontal: 15,
     elevation: 5
+  },
+
+  dashTopBarInner: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    maxWidth: 580,
+    width: "100%",
+    marginHorizontal: "auto"
   },
 
   dashTabContainer: {

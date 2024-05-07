@@ -9,10 +9,13 @@ const styles = StyleSheet.create({
   schedTextContainer: {
     flexDirection: "row",
     backgroundColor: darkGreen,
+    maxWidth: 580,
+    width: "100%",
     borderRadius: 5,
-    padding: 10,
-    marginHorizontal: 15,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
     marginVertical: 5,
+    marginHorizontal: "auto",
     elevation: 5
   },
 

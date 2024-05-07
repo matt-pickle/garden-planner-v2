@@ -10,10 +10,6 @@ export default function createStyleSheet() {
       paddingHorizontal: 5
     },
 
-    list: {
-      flexDirection: "column"
-    },
-
     newGardenButton: {
       alignSelf: "center",
       justifyContent: "center",

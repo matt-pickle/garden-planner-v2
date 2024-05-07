@@ -3,12 +3,19 @@ import { lightFont, cream, darkGreen } from "./style-variables.js"
 
 const styles = StyleSheet.create({
   listItemContainer: {
+    maxWidth: 600,
+    width: "100%",
+    paddingHorizontal: 10,
+    marginHorizontal: "auto"
+  },
+
+  listItemInner: {
     flexDirection: "row",
     justifyContent: "space-between",
     backgroundColor: cream,
     borderRadius: 5,
+    width: "100%",
     marginTop: 20,
-    marginHorizontal: 10,
     elevation: 5
   },
 

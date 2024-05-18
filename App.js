@@ -14,10 +14,21 @@ import styles from "./styles/AppStyles.js"
 SplashScreen.preventAutoHideAsync()
 
 export default function App() {
+  let initialOrientation = ""
+
+  const dim = Dimensions.get("window")
+  if (dim.width >= dim.height) {
+    initialOrientation = "landscape"
+    console.log("initial orientation landscape")
+  } else {
+    initialOrientation = "portrait"
+    console.log("portrait orientation portrait")
+  }
+
   const [user, setUser] = useState(auth.currentUser)
   const [userData, setUserData] = useState()
   const [screen, setScreen] = useState("Loading")
-  const [orientation, setOrientation] = useState("")
+  const [orientation, setOrientation] = useState(initialOrientation)
   
   useEffect(() => {
     const authListener = onAuthStateChanged(auth, async (userObj) => {

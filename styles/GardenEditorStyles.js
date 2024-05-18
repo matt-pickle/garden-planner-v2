@@ -11,7 +11,7 @@ export default function createStyleSheet(width, height) {
   let gridWidth = null;
   let mainFlexDirection = "column";
   let mainAlignItems = "center";
-  let plantMenuFlexDir = "column";
+  let plantMenuFlexDir = "row";
   let plantMenuWidth = windowWidth;
   let plantMenuHeight = 125;
   let contentPaddingHorizontal = 10;
@@ -38,9 +38,9 @@ export default function createStyleSheet(width, height) {
     }
     mainFlexDirection = "row";
     mainAlignItems = "flex-start";
-    plantMenuFlexDir = "row";
+    plantMenuFlexDir = "column";
     plantMenuWidth = 110;
-    plantMenuHeight = "auto";
+    plantMenuHeight = "100%";
     contentPaddingHorizontal = 15;
     contentPaddingTop = 0;
     contentPaddingBottom = 15;

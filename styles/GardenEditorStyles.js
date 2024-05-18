@@ -3,8 +3,8 @@ import { lightFont, cream, darkCream, brown, darkGreen } from "./style-variables
 
 export default function createStyleSheet(width, height) {
   const windowWidth = Dimensions.get("window").width;
-  const windowHeight = Dimensions.get("window").height - StatusBar.currentHeight;
-
+  const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight : 0
+  const windowHeight = Dimensions.get("window").height - statusBarHeight;
   const topBarHeight = 45;
 
   let squareSize = null;
@@ -54,8 +54,7 @@ export default function createStyleSheet(width, height) {
 
     editorContainer: {
       flex: 1,
-      flexDirection: "column",
-      alignItems: "center"
+      flexDirection: "column"
     },
 
     topBar: {

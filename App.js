@@ -37,7 +37,7 @@ export default function App() {
 
   useEffect(() => {
     const dimensionsListener = Dimensions.addEventListener("change", () => {
-      const dim = Dimensions.get("screen")
+      const dim = Dimensions.get("window")
       if (dim.width >= dim.height) {
         setOrientation("landscape")
       } else {

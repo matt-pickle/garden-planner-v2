@@ -1,34 +1,29 @@
 import { Modal, Text, View, Pressable } from "react-native"
 import { Picker } from "@react-native-picker/picker"
-import { Ionicons } from "@expo/vector-icons"
 import * as WebBrowser from "expo-web-browser"
 import styles from "../styles/SettingsModalStyles"
 
-export default function SettingsModal({ name, zone, isSettingsVisible, setIsSettingsVisible, changeZone, handleLogOut }) {
+export default function ZoneModal({ isZoneModalVisible, setIsZoneModalVisible, zone, changeZone }) {
   return (
     <Modal
       animationType="slide"
-      visible={isSettingsVisible}
+      visible={isZoneModalVisible}
       transparent={true}
-      onRequestClose={() => setIsSettingsVisible(false)}
+      onRequestClose={() => setIsZoneModalVisible(false)}
     >
       <View style={styles.modal}>
         <View style={styles.modalTopRowContainer}>
-          <Text style={styles.modalHeader}>SETTINGS</Text>
-          <Pressable
-            style={styles.modalXButton}
-            onPress={() => setIsSettingsVisible(false)}
-          >
-            <Ionicons
-              name="close-sharp"
-              style={styles.modalX}
-            />
-          </Pressable>
+          <Text style={styles.modalHeader}>SELECT ZONE</Text>
         </View>
 
-        <Text style={styles.modalText}>Logged in as {name}</Text>
+        <Text style={styles.modalText}>
+          Please select the USDA Plant Hardiness Zone for your location in order to see accurate dates in the schedule view.
+          {'\n\n'}Learn more about plant hardiness zones at
+        </Text>
+        <Pressable style={styles.zoneLinkPressable} onPress={() => WebBrowser.openBrowserAsync("https://planthardiness.ars.usda.gov")}>
+          <Text style={styles.zoneModalZoneLink}>https://planthardiness.ars.usda.gov</Text>
+        </Pressable>
 
-        <Text style={styles.modalText}>Change Plant Hardiness Zone: </Text>
         <View style={styles.modalPickerContainer}>
           <Picker
             style={styles.modalPicker}
@@ -142,12 +137,9 @@ export default function SettingsModal({ name, zone, isSettingsVisible, setIsSett
             />
           </Picker>
         </View>
-        <Pressable onPress={() => WebBrowser.openBrowserAsync("https://planthardiness.ars.usda.gov")}>
-          <Text style={styles.darkZoneLink}>https://planthardiness.ars.usda.gov</Text>
-        </Pressable>
 
-        <Pressable onPress={handleLogOut}>
-          <Text style={[styles.modalButton, styles.noMarginBottom]}>LOG OUT</Text>
+        <Pressable onPress={() => setIsZoneModalVisible(false)}>
+          <Text style={[styles.modalButton, styles.noMarginBottom]}>SELECT</Text>
         </Pressable>
       </View>
     </Modal>

@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
 
   modalPicker: {
     color: darkGreen,
-    width: 100,
+    width: 110,
     marginRight: -5
   },
 
@@ -77,6 +77,19 @@ const styles = StyleSheet.create({
     borderColor: darkGreen,
     borderBottomWidth: 1,
     marginBottom: 20
+  },
+
+  zoneModalZoneLink: {
+    color: darkGreen,
+    fontFamily: lightFont,
+    fontSize: 14,
+    borderColor: darkGreen,
+    borderBottomWidth: 1
+  },
+
+  zoneLinkPressable: {
+    marginBottom: 40,
+    marginTop: -25
   },
 
   modalButton: {

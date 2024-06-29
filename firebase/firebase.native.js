@@ -12,7 +12,7 @@ export const db = getFirestore(firebaseApp)
 
 export async function createDocument(userId) {
   await setDoc(doc(db, "users", userId), {
-    zone: "7a",
+    zone: "",
     gardens: []
   })
   .catch(error => console.log(error))

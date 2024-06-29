@@ -5,6 +5,7 @@ import { updateUserData } from "../firebase/firebase"
 // import admobKeys from "../api/admob-keys"
 // import { InterstitialAd, TestIds, AdEventType } from "react-native-google-mobile-ads"
 import SettingsModal from "./SettingsModal"
+import ZoneModal from "./ZoneModal"
 import CreateGardenModal from "./CreateGardenModal"
 import DeleteModal from "./DeleteModal"
 import DashTopBar from "./DashTopBar"
@@ -19,6 +20,7 @@ import styles from "../styles/DashboardStyles"
 export default function Dashboard({ user, userData, setScreen, orientation }) {
   const [zone, setZone] = useState(userData.zone)
   const [gardens, setGardens] = useState(userData.gardens)
+  const [isZoneModalVisible, setIsZoneModalVisible] = useState(false)
   const [isSettingsVisible, setIsSettingsVisible] = useState(false)
   const [isDeleteModalVisible, setIsDeleteModalVisible] = useState(false)
   const [isCreateGardenModalVisible, setIsCreateGardenModalVisible] = useState(false)
@@ -27,6 +29,12 @@ export default function Dashboard({ user, userData, setScreen, orientation }) {
   const [gardenToDelete, setGardenToDelete] = useState({})
   const [displayedGarden, setDisplayedGarden] = useState(null)
   const [adIsLoaded, setAdIsLoaded] = useState(false)
+
+  useEffect(() => {
+    if (!zone) {
+      setIsZoneModalVisible(true)
+    }
+  },[])
   
   // useEffect(() => {
   //   if (Math.random() < .2) {
@@ -47,9 +55,7 @@ export default function Dashboard({ user, userData, setScreen, orientation }) {
 
   function changeZone(newZone) {
     setZone(newZone)
-    userRef.update({
-      zone: newZone
-    })
+    updateUserData(user.uid, { zone: newZone })
   }
 
   function createNewGarden(gardenName) {
@@ -152,13 +158,18 @@ export default function Dashboard({ user, userData, setScreen, orientation }) {
   return (
     <View style={styles.dashContainer}>
       {!isEditorOpen && dashTopBar}
+      <ZoneModal
+        isZoneModalVisible={isZoneModalVisible}
+        setIsZoneModalVisible={setIsZoneModalVisible}
+        zone={zone}
+        changeZone={changeZone}
+      />
       <SettingsModal
         isSettingsVisible={isSettingsVisible}
         setIsSettingsVisible={setIsSettingsVisible}
         name={user.displayName}
         zone={zone}
         changeZone={changeZone}
-        setScreen={setScreen}
         handleLogOut={handleLogOut}
       />
       <CreateGardenModal 

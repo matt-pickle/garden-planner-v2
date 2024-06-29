@@ -3,7 +3,6 @@ import { lightFont, cream, darkGreen } from "./style-variables.js"
 
 const styles = StyleSheet.create({
   listItemContainer: {
-    maxWidth: 600,
     width: "100%",
     paddingHorizontal: 10,
     marginHorizontal: "auto"

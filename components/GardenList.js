@@ -18,7 +18,7 @@ export default function GardenList({ gardens, openEditor, openDeleteModal, setIs
 
   return (
     <View style={styles.listContainer}>
-      <ScrollView style={styles.list}>
+      <ScrollView contentContainerStyle={styles.list}>
         {gardenListItems}
       </ScrollView>
       <Pressable

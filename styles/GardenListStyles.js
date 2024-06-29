@@ -10,6 +10,12 @@ export default function createStyleSheet() {
       paddingHorizontal: 5
     },
 
+    list: {
+      maxWidth: 600,
+      width: "100%",
+      alignSelf: "center"
+    },
+
     newGardenButton: {
       alignSelf: "center",
       justifyContent: "center",

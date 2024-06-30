@@ -17,6 +17,10 @@ const styles = StyleSheet.create({
     elevation: 5
   },
 
+  modalLayer2: {
+    marginTop: 55
+  }, 
+
   centeredModal: {
     alignItems: "center"
   },
@@ -100,14 +104,42 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     paddingVertical: 10,
     paddingHorizontal: 25,
-    marginTop: 15
+    marginTop: 25
+  },
+
+  deleteAccountButton: {
+    borderColor: "red",
+    color: "red",
+    fontFamily: boldFont,
+    fontSize: 16,
+    borderRadius: 5,
+    borderWidth: 2,
+    paddingTop: 11,
+    paddingBottom: 7,
+    paddingHorizontal: 25,
+    marginTop: 10
+  },
+
+  finalDeleteAccountButton: {
+    backgroundColor: "red",
+    color: cream,
+    fontFamily: boldFont,
+    fontSize: 16,
+    borderRadius: 5,
+    paddingVertical: 10,
+    paddingHorizontal: 25
   },
 
   modalButtonRow: {
     flexDirection: "row",
-    justifyContent: "space-between",
-    width: "65%",
-    marginBottom: -15
+    justifyContent: "center",
+    width: "100%"
+  },
+
+  modalButtonInRow: {
+    marginTop: 0,
+    marginBottom: 0,
+    marginHorizontal: 10
   }
 })
 

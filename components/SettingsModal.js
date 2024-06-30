@@ -1,10 +1,14 @@
+import { useState } from "react"
 import { Modal, Text, View, Pressable } from "react-native"
 import { Picker } from "@react-native-picker/picker"
 import { Ionicons } from "@expo/vector-icons"
 import * as WebBrowser from "expo-web-browser"
+import DeleteAccountModal from "./DeleteAccountModal"
 import styles from "../styles/SettingsModalStyles"
 
-export default function SettingsModal({ name, zone, isSettingsVisible, setIsSettingsVisible, changeZone, handleLogOut }) {
+export default function SettingsModal({ name, zone, isSettingsVisible, setIsSettingsVisible, changeZone, handleLogOut, handleDeleteAccount }) {
+  const [isDeleteAccountModalVisible, setIsDeleteAccountModalVisible] = useState(false)
+
   return (
     <Modal
       animationType="slide"
@@ -12,6 +16,11 @@ export default function SettingsModal({ name, zone, isSettingsVisible, setIsSett
       transparent={true}
       onRequestClose={() => setIsSettingsVisible(false)}
     >
+      <DeleteAccountModal
+        isDeleteAccountModalVisible={isDeleteAccountModalVisible}
+        setIsDeleteAccountModalVisible={setIsDeleteAccountModalVisible}
+        handleDeleteAccount={handleDeleteAccount}
+      />
       <View style={styles.modal}>
         <View style={styles.modalTopRowContainer}>
           <Text style={styles.modalHeader}>SETTINGS</Text>
@@ -146,10 +155,14 @@ export default function SettingsModal({ name, zone, isSettingsVisible, setIsSett
           <Text style={styles.darkZoneLink}>https://planthardiness.ars.usda.gov</Text>
         </Pressable>
 
+        <Pressable onPress={() => setIsDeleteAccountModalVisible(true)}>
+          <Text style={styles.deleteAccountButton}>DELETE ACCOUNT</Text>
+        </Pressable>
+
         <Pressable onPress={handleLogOut}>
           <Text style={[styles.modalButton, styles.noMarginBottom]}>LOG OUT</Text>
         </Pressable>
       </View>
     </Modal>
-  );
+  )
 }

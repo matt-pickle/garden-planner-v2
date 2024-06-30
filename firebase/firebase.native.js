@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app"
 import firebaseConfig from "./firebase-keys"
-import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore"
+import { getFirestore, doc, setDoc, getDoc, deleteDoc } from "firebase/firestore"
 import { initializeAuth, getReactNativePersistence } from 'firebase/auth';
 import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -33,4 +33,8 @@ export async function getUserData(userId) {
 export async function updateUserData(userId, userData) {
   await setDoc(doc(db, "users", userId), userData, { merge: true })
   .catch(error => console.log(error))
+}
+
+export async function deleteAccount(userId) {
+  await deleteDoc(doc(db, "users", userId)).catch(error => console.log(error))
 }

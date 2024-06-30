@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { View } from "react-native"
 import { logOut } from "../firebase/firebase-auth-methods"
-import { updateUserData } from "../firebase/firebase"
+import { updateUserData, deleteAccount } from "../firebase/firebase"
 // import admobKeys from "../api/admob-keys"
 // import { InterstitialAd, TestIds, AdEventType } from "react-native-google-mobile-ads"
 import SettingsModal from "./SettingsModal"
@@ -128,6 +128,11 @@ export default function Dashboard({ user, userData, setScreen, orientation }) {
     setScreen("Login")
   }
 
+  function handleDeleteAccount() {
+    deleteAccount(user.uid)
+    handleLogOut()
+  }
+
   const dashTopBar = <DashTopBar
     isScheduleOpen={isScheduleOpen}
     setIsScheduleOpen={setIsScheduleOpen}
@@ -171,6 +176,7 @@ export default function Dashboard({ user, userData, setScreen, orientation }) {
         zone={zone}
         changeZone={changeZone}
         handleLogOut={handleLogOut}
+        handleDeleteAccount={handleDeleteAccount}
       />
       <CreateGardenModal 
         isCreateGardenModalVisible={isCreateGardenModalVisible}

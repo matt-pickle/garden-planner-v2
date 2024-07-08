@@ -2,10 +2,10 @@ import { View, Text, Pressable } from "react-native"
 import { Entypo } from '@expo/vector-icons'
 import styles from "../styles/DashTopBarStyles"
 
-export default function DashTopBar({ isScheduleOpen, setIsScheduleOpen, setIsSettingsVisible }) {    
+export default function DashTopBar({ isScheduleOpen, setIsScheduleOpen, setIsSettingsVisible, displayAd }) {    
 
   async function openSchedule() {
-    // displayAd()
+    displayAd()
     setIsScheduleOpen(true)
   }
 

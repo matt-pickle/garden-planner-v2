@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   "expo": {
     "name": "garden-planner-v2",
     "slug": "garden-planner-v2",
@@ -36,5 +36,8 @@ export default {
     "plugins": [
       "@react-native-google-signin/google-signin"
     ]
+  },
+  "react-native-google-mobile-ads": {
+    "android_app_id": 'ca-app-pub-5662395825140930~4170055589'
   }
 }

@@ -3,7 +3,7 @@ import { View } from "react-native"
 import { logOut } from "../firebase/firebase-auth-methods"
 import { updateUserData, deleteAccount } from "../firebase/firebase"
 // import admobKeys from "../api/admob-keys"
-// import { InterstitialAd, TestIds, AdEventType } from "react-native-google-mobile-ads"
+import { InterstitialAd, TestIds, AdEventType } from "react-native-google-mobile-ads"
 import SettingsModal from "./SettingsModal"
 import ZoneModal from "./ZoneModal"
 import CreateGardenModal from "./CreateGardenModal"
@@ -14,7 +14,7 @@ import GardenEditor from "./GardenEditor"
 import Schedule from "./Schedule"
 import styles from "../styles/DashboardStyles"
 
-// const interstitial = InterstitialAd.createForAdRequest(TestIds.INTERSTITIAL)
+const interstitial = InterstitialAd.createForAdRequest(TestIds.INTERSTITIAL)
 // const interstitial = InterstitialAd.createForAdRequest(admobKeys.interstitialID)
 
 export default function Dashboard({ user, userData, setScreen, orientation }) {
@@ -36,22 +36,22 @@ export default function Dashboard({ user, userData, setScreen, orientation }) {
     }
   },[])
   
-  // useEffect(() => {
-  //   if (Math.random() < .2) {
-  //     const adListener = interstitial.addAdEventListener(AdEventType.LOADED, () => {
-  //       setAdIsLoaded(true)
-  //     })
-  //     interstitial.load()
+  useEffect(() => {
+    if (Math.random() < .2) {
+      const adListener = interstitial.addAdEventListener(AdEventType.LOADED, () => {
+        setAdIsLoaded(true)
+      })
+      interstitial.load()
   
-  //     return adListener
-  //   }
-  // }, [isEditorOpen, isScheduleOpen])
+      return adListener
+    }
+  }, [isEditorOpen, isScheduleOpen])
 
-  // async function displayAd() {
-  //   if (adIsLoaded) {
-  //     interstitial.show()
-  //   }
-  // }
+  async function displayAd() {
+    if (adIsLoaded) {
+      interstitial.show()
+    }
+  }
 
   function changeZone(newZone) {
     setZone(newZone)
@@ -75,7 +75,7 @@ export default function Dashboard({ user, userData, setScreen, orientation }) {
   }
 
   async function openEditor(garden) {
-    // displayAd()
+    displayAd()
     setDisplayedGarden(garden)
     setIsEditorOpen(true)
   }
@@ -137,7 +137,7 @@ export default function Dashboard({ user, userData, setScreen, orientation }) {
     isScheduleOpen={isScheduleOpen}
     setIsScheduleOpen={setIsScheduleOpen}
     setIsSettingsVisible={setIsSettingsVisible}
-    // displayAd={displayAd}
+    displayAd={displayAd}
   />
 
   const gardenList = <GardenList 

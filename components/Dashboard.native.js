@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { View } from "react-native"
 import { logOut } from "../firebase/firebase-auth-methods"
 import { updateUserData, deleteAccount } from "../firebase/firebase"
-// import admobKeys from "../api/admob-keys"
+import admobKeys from "../admob/admob-keys"
 import { InterstitialAd, TestIds, AdEventType } from "react-native-google-mobile-ads"
 import SettingsModal from "./SettingsModal"
 import ZoneModal from "./ZoneModal"
@@ -14,8 +14,8 @@ import GardenEditor from "./GardenEditor"
 import Schedule from "./Schedule"
 import styles from "../styles/DashboardStyles"
 
-const interstitial = InterstitialAd.createForAdRequest(TestIds.INTERSTITIAL)
-// const interstitial = InterstitialAd.createForAdRequest(admobKeys.interstitialID)
+// const interstitial = InterstitialAd.createForAdRequest(TestIds.INTERSTITIAL)
+const interstitial = InterstitialAd.createForAdRequest(admobKeys.interstitialID)
 
 export default function Dashboard({ user, userData, setScreen, orientation }) {
   const [zone, setZone] = useState(userData.zone)
@@ -50,6 +50,7 @@ export default function Dashboard({ user, userData, setScreen, orientation }) {
   async function displayAd() {
     if (adIsLoaded) {
       interstitial.show()
+      setAdIsLoaded(false)
     }
   }
 

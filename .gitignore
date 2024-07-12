@@ -2,6 +2,7 @@
 
 firebase-keys.js
 google-services.json
+admob-keys.js
 
 # dependencies
 node_modules/

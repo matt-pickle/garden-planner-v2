@@ -2,8 +2,18 @@ import { StyleSheet } from "react-native"
 import { lightFont, boldFont, cream, darkGreen } from "./style-variables.js"
 
 const styles = StyleSheet.create({
-  contentContainer: {
-    paddingVertical: 10
+  listContainer: {
+    maxHeight: "95%",
+    paddingVertical: 10,
+    paddingHorizontal: 5,
+    marginHorizontal: "auto"
+  },
+
+  scheduleList: {
+    maxWidth: 600,
+    width: "100%",
+    alignSelf: "center",
+    paddingHorizontal: 10
   },
 
   schedTextContainer: {

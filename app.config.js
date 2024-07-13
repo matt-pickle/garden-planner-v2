@@ -2,14 +2,14 @@ module.exports = {
   "expo": {
     "name": "garden-planner-v2",
     "slug": "garden-planner-v2",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "orientation": "default",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "cover",
+      "backgroundColor": "#004B14"
     },
     "assetBundlePatterns": [
       "**/*"

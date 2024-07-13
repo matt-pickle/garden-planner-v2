@@ -21,7 +21,7 @@ export default function createStyleSheet(width, height) {
   let menuBtnMarginHorizontal = 7;
 
   if (windowWidth < windowHeight) {
-    let maxGridHeight = windowHeight - topBarHeight - plantMenuHeight - 90;
+    let maxGridHeight = windowHeight - topBarHeight - plantMenuHeight - 100;
     let maxGridWidth = windowWidth - 30;
     squareSize = Math.floor((maxGridWidth - 4) / width);
     let gridHeight = squareSize * height + 4;
@@ -29,7 +29,7 @@ export default function createStyleSheet(width, height) {
       squareSize = Math.floor((maxGridHeight - 4) / height);
     }
   } else {
-    let maxGridHeight = windowHeight - topBarHeight - 90;
+    let maxGridHeight = windowHeight - topBarHeight - 100;
     let maxGridWidth = windowWidth - 145;
     squareSize = Math.floor((maxGridWidth - 4) / width);
     let gridHeight = squareSize * height + 4;

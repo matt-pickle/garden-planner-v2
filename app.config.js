@@ -1,8 +1,8 @@
 module.exports = {
   "expo": {
-    "name": "garden-planner-v2",
+    "name": "Garden Planner",
     "slug": "garden-planner-v2",
-    "version": "1.2.0",
+    "version": "1.4.0",
     "orientation": "default",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -18,7 +18,7 @@ module.exports = {
       "supportsTablet": true
     },
     "android": {
-      "versionCode": 2,
+      "versionCode": 4,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#004B14"

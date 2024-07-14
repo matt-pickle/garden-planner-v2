@@ -4,7 +4,6 @@ import { lightFont, boldFont, cream, darkGreen } from "./style-variables.js"
 const styles = StyleSheet.create({
   listContainer: {
     maxHeight: "95%",
-    paddingVertical: 10,
     paddingHorizontal: 5,
     marginHorizontal: "auto"
   },
@@ -24,7 +23,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     paddingVertical: 10,
     paddingHorizontal: 20,
-    marginVertical: 5,
+    marginTop: 10,
     marginHorizontal: "auto",
     elevation: 5
   },
@@ -57,6 +56,10 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 20,
     paddingLeft: 10
+  },
+
+  spacer: {
+    height: 50
   }
 })
 

@@ -51,7 +51,7 @@ export default function Schedule({ gardens, zone }) {
     item.date = dateString
   })
 
-  const scheduleArr = messagesArr.map((item, index) => {
+  let scheduleArr = messagesArr.map((item, index) => {
     return (
       <View style={styles.schedTextContainer} key={index}>
         <View style={styles.schedLeftColumn}>
@@ -67,6 +67,8 @@ export default function Schedule({ gardens, zone }) {
       </View>
     )   
   })
+
+  scheduleArr.push(<View style={styles.spacer} key={scheduleArr.length}></View>)
 
   return (
     <View style={styles.listContainer}>

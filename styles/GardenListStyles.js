@@ -33,6 +33,10 @@ export default function createStyleSheet() {
       fontFamily: lightFont,
       fontSize: 70,
       lineHeight: 70
+    },
+
+    spacer: {
+      height: 50
     }
   })
 }

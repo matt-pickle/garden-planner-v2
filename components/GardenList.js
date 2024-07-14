@@ -5,7 +5,7 @@ import createStyleSheet from "../styles/GardenListStyles.js"
 export default function GardenList({ gardens, openEditor, openDeleteModal, setIsCreateGardenModalVisible }) {
   const styles = createStyleSheet()
   
-  const gardenListItems = gardens.map(item => {
+  let gardenListItems = gardens.map(item => {
     return (
       <GardenListItem
         key={item.id}
@@ -15,6 +15,8 @@ export default function GardenList({ gardens, openEditor, openDeleteModal, setIs
       />
     )
   })
+
+  gardenListItems.push(<View style={styles.spacer} key={gardenListItems.length}></View>)
 
   return (
     <View style={styles.listContainer}>

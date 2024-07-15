@@ -27,7 +27,7 @@ module.exports = {
       "googleServicesFile": process.env.GOOGLE_SERVICES_JSON
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/icon.png"
     },
     "extra": {
       "eas": {

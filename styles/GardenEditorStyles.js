@@ -139,7 +139,8 @@ export default function createStyleSheet(width, height) {
       flexWrap: "wrap",
       width: gridWidth,
       borderWidth: 2,
-      borderColor: darkCream
+      borderColor: darkCream,
+      zIndex: -1
     },
 
     square: {

@@ -3,6 +3,7 @@ import { cream, darkCream, darkGreen, lightFont } from "./style-variables.js"
 
 const styles = StyleSheet.create({
   dropdownContainer: {
+    backgroundColor: cream,
     borderColor: darkCream,
     borderWidth: 2,
     borderRadius: 5,
@@ -12,10 +13,8 @@ const styles = StyleSheet.create({
   dropdownLabelContainer: {
     flexDirection: "row",
     gap: 10,
-    backgroundColor: cream,
     paddingVertical: 10,
     paddingHorizontal: 20,
-    borderRadius: 5
   },
 
   dropdownLabel: {

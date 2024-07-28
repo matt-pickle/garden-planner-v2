@@ -100,6 +100,7 @@ export default function createStyleSheet(width, height) {
 
     sizePickerRow: {
       flexDirection: "row",
+      gap: 10,
       marginBottom: 15
     },
 
@@ -113,7 +114,7 @@ export default function createStyleSheet(width, height) {
       width: 155,
       paddingLeft: 10,
       paddingRight: 0,
-      margin: 5,
+      marginVertical: 5,
       elevation: 5
     },
 

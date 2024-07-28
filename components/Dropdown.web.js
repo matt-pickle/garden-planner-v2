@@ -1,7 +1,7 @@
 import { useState } from "react"
-import { View, Text, Pressable } from "react-native"
+import { View, ScrollView, Text, Pressable } from "react-native"
 import { Entypo } from "@expo/vector-icons"
-import styles from "../styles/DropdownStyles.js"
+import styles from "../styles/DropdownStyles"
 
 export default function Dropdown({ label, options, initialSelected, handleSelect }) {
   const [selected, setSelected] = useState(initialSelected)
@@ -23,7 +23,7 @@ export default function Dropdown({ label, options, initialSelected, handleSelect
         onHoverIn={() => setHoveredOption(option)}
         onHoverOut={() => setHoveredOption("")}
       >
-        <Text style={hoveredOption === option && styles.hoveredOptionText}>
+        <Text style={hoveredOption === option ? [styles.dropdownOptionText, styles.hoveredOptionText] : styles.dropdownOptionText}>
           {option}
         </Text>
       </Pressable>
@@ -39,14 +39,14 @@ export default function Dropdown({ label, options, initialSelected, handleSelect
         <Text style={styles.dropdownLabel}>{label}:</Text>
         <Text style={styles.dropdownSelected}>
           {selected}&nbsp;
-          <View style={isOpen ? [styles.dropdownIcon, styles.rotatedDropdownIcon] : styles.dropdownIcon}>
-            <Entypo name="chevron-down" />
+          <View style={isOpen ? [styles.dropdownIconWrapper, styles.rotatedDropdownIcon] : styles.dropdownIconWrapper}>
+            <Entypo name="chevron-down" style={styles.dropdownIcon} />
           </View>
         </Text>
       </Pressable>
-      <View style={isOpen ? [styles.dropdown, styles.dropdownOpen] : [styles.dropdown, styles.dropdownClosed]}>
+      <ScrollView style={isOpen ? [styles.dropdown, styles.dropdownOpen] : styles.dropdown}>
         {dropdownOptions}
-      </View>
+      </ScrollView>
     </View>
   )
 }

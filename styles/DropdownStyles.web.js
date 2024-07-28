@@ -1,9 +1,12 @@
 import { StyleSheet } from "react-native"
-import { cream, darkGreen } from "./style-variables.js"
+import { cream, darkCream, darkGreen, lightFont } from "./style-variables.js"
 
 const styles = StyleSheet.create({
   dropdownContainer: {
-    marginHorizontal: 10,
+    borderColor: darkCream,
+    borderWidth: 2,
+    borderRadius: 5,
+    marginHorizontal: 0
   },
 
   dropdownLabelContainer: {
@@ -15,30 +18,43 @@ const styles = StyleSheet.create({
     borderRadius: 5
   },
 
+  dropdownLabel: {
+    fontFamily: lightFont,
+    color: darkGreen
+  },
+
+  dropdownSelected: {
+    fontFamily: lightFont,
+    color: darkGreen
+  },
+
   dropdown: {
     position: "absolute",
-    top: "86%",
+    top: "100%",
     left: 0,
     width: "100%",
-    backgroundColor: cream,
-    paddingTop: 5,
+    maxHeight: 0,
+    backgroundColor: darkCream,
     borderBottomLeftRadius: 5,
     borderBottomRightRadius: 5,
     transition: "max-height .25s ease",
-    overflow: "hidden"
+    overflow: "hidden",
+    elevation: 10,
+    zIndex: 2
   },
 
   dropdownOpen: {
-    maxHeight: 600
-  },
-
-  dropdownClosed: {
-    maxHeight: 0
+    maxHeight: 500
   },
 
   dropdownOption: {
     paddingVertical: 10,
     paddingHorizontal: 20
+  },
+
+  dropdownOptionText: {
+    color: darkGreen,
+    fontFamily: lightFont
   },
 
   hoveredOption: {
@@ -49,8 +65,12 @@ const styles = StyleSheet.create({
     color: cream
   },
 
-  dropdownIcon: {
+  dropdownIconWrapper: {
     transition: "transform .25s ease"
+  },
+
+  dropdownIcon: {
+    color: darkGreen
   },
 
   rotatedDropdownIcon: {
